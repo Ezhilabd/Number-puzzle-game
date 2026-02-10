@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tournament play</title>
+    <link rel="stylesheet" href="{% static 'css/play.css' %}" />
+
+</head>
+
+<body>
+    <h1>Playing Tournament: {{ tournament.name }}</h1>
+    <div class="main">
+        <div class="aa aa1">
+
+            <p> <span>Entry Fee : </span> {{ tournament.entry_fee }} coins</p>
+            <p><span>Prize :</span> {{ tournament.prize }} coins</p>
+
+            {% if error %}
+            <p class="error">{{ error }}</p>
+            {% else %}
+            <p class="ff">Guess the 4-digit number (1-9 each digit).</p>
+            <div class="ins">
+                <p>* -> Correct number in correct position</p>
+                <p># -> Correct number in wrong position</p>
+                <p>_ -> wrong choice</p>
+            </div>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="guess">Your Guess:</label>
+                    <input type="text" id="guess" name="guess" pattern="[1-9]{4}" required maxlength="4"
+                        placeholder="eg . 1234">
+                </div>
+                <button type="submit">Submit Guess</button>
+            </form>
+            <a class="back b3" href="{% url 'main' %}">Back to Home</a>
+
+        </div>
+        <div class="aa aa2">
+            {% if feedback %}
+            <p>{{ feedback }}</p>
+            {% endif %}
+
+            {% if attempts %}
+            <p>Attempts: {{ attempts }}</p>
+            {% endif %}
+
+            {% if history %}
+            <h3>Guess History:</h3>
+            <ul>
+                {% for h in history %}
+                {% if forloop.counter <= 10%} <li>{{ h.input }} - {{ h.output }}</li>
+                    {% endif %}
+                    {% endfor %}
+            </ul>
+            {% endif %}
+
+            {% if game_over %}
+            <p>Game Over! The secret was {{ secret }}.</p>
+
+            {% endif %}
+            {% endif %}
+        </div>
+        <a class="back b1" href="{% url 'main' %}">Back to Home</a>
+    </div>
+    
+</body>
+
+</html>

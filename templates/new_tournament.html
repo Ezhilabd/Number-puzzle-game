@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournaments</title>
+    <link rel="stylesheet" href="{% static 'css/newt.css' %}" />
+</head>
+
+<body>
+    <div class="con">
+        <h1>Available Tournaments</h1>
+        {% if tournaments %}
+
+        {% for tournament in tournaments %}
+
+        <table>
+            <tr>
+
+                <th>Name 👑</th>
+                <th>Fee💸</th></br>
+                <th>Prize 💰</th>
+                <th>Date 📅</th>
+                <th>Time ⌛</th>
+                <th>Click 🏁</th>
+            </tr>
+            <tr>
+                <th class="na">{{ tournament.name }}</th>
+                <td>  {{ tournament.entry_fee }}</td>
+                <td>{{ tournament.prize }}</td>
+                <td>{{ tournament.date }}</td>
+                <td>{{ tournament.time }}</td>
+                <td><a class="dot" href="{% url 'play_tournament' tournament.id %}">Play</a></td>
+            </tr>
+        </table>
+
+
+        {% endfor %}
+
+        {% else %}
+        <p>No tournaments available.</p>
+        {% endif %}
+        <a class="back " href="{% url 'main' %}">Back to Home</a>
+    </div>
+</body>
+
+</html>

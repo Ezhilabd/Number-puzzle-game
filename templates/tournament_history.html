@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+<body>
+    <div class="con">
+    <h1>Your Tournament History</h1>
+{% if history %}
+<table>
+    <thead>
+        <tr>
+            <th>Input</th>
+            <th>Output</th>
+            <th>Time</th>
+            <th>Date</th>
+            <th>Tournament</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for h in history %}
+        <tr>
+            <td>{{ h.input }}</td>
+            <td>{{ h.output }}</td>
+            <td>{{ h.time }}</td>
+            <td>{{ h.created_at|date:"Y-m-d" }}</td>
+            <td>{{ h.tournament.name }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No history available.</p>
+{% endif %}
+<a class="back" href="{% url 'main' %}">Back to Home</a>
+</div>
+</body>
+</html>

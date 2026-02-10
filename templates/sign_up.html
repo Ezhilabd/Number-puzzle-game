@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+</head>
+
+<body>
+    <div class="con">
+        <section class="main">
+            <h1>Welcome !✋</h1>
+            <h1>Create our Account</h1>
+
+            <form method="POST" action="{% url 'signup' %}" id="signupform">
+                {% csrf_token %}
+                <div>
+                    <label for="">Username :</label>
+                    <input name="username" type="text" placeholder="Enter name" />
+                </div>
+                <div>
+                    <label for="">Email :</label>
+                    <input name="email" type="email" placeholder="Enter your Email" />
+                </div>
+                <div>
+                    <label for="">Age :</label>
+                    <input name="age" type="number" placeholder="Enter your age" />
+                </div>
+                <div>
+                    <label for="">Password :</label>
+                    <input name="password1" id="password" type="password" placeholder="Enter your password" />
+                </div>
+                <div>
+                    <label for="">Confirm Password :</label>
+                    <input name="password2" id="confirm_password" type="password" placeholder="Enter your password" />
+                    {% if error %}
+                    <div class="error-box">
+                        {{ error }}
+                    </div>
+                    {% endif %}
+                </div>
+                <button type="submit">Submit</button>
+
+            </form>
+            <p class="next">Already have an account?<a href="{% url 'signin' %}">Login</a></p>
+
+        </section>
+    </div>
+    <script>
+
+
+
+    </script>
+</body>
+
+</html>

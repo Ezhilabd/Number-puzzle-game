@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(255, 236, 126);
+}
+
+.con {
+    min-height: 100vh;
+    background-color: rgb(255, 236, 126);
+    padding: 30px;
+    width: 100%;
+}
+
+table {
+    /* border:2px solid navy; */
+    border-collapse: collapse;
+    /* height :200px; */
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+td,
+th {
+    border: 2px solid white;
+    padding: 10px;
+    width: 17%;
+
+}
+
+th {
+    color: red;
+    font-size: 25px;
+}
+
+td {
+    color: blue;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+h1 {
+    text-align: center;
+    color: brown;
+    font-size: 40px;
+}
+
+.back {
+    margin-left: 580px;
+    background-color: green;
+    margin-top: 50px;
+    padding: 10px;
+    color: gold;
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
+.dot {
+    color: yellow;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 21px;
+}
+@media (max-width:600px){
+    td{
+        font-size: 15px;
+    }
+    .back{
+        margin-left: 0px;
+        margin: auto;
+    }
+    th{
+        font-size: 20px;
+        padding: 6px;
+    }
+    h1{
+        font-size: 30px;
+        min-width: 300px;
+        padding-left: 10px;
+    }
+    .con{
+        padding: 10px;
+    }
+    .b1{
+        margin-left: 30%;
+    }
+}

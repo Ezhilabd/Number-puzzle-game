@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(255, 236, 126);
+}
+
+.con {
+    min-height: 100vh;
+    background-color: rgb(255, 236, 126);
+    padding: 30px;
+}
+
+table {
+    /* border:2px solid navy; */
+    border-collapse: collapse;
+    /* height :200px; */
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+td,
+th {
+    border: 2px solid white;
+    padding: 10px;
+    width: 17%;
+
+}
+
+.na {
+    color: green;
+}
+
+th {
+    color: red;
+    font-size: 25px;
+}
+
+td {
+    color: blue;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+h1 {
+    text-align: center;
+    color: brown;
+    font-size: 40px;
+}
+
+.back {
+    margin-left: 580px;
+    background-color: blue;
+    margin-top: 50px;
+    padding: 10px;
+    color: gold;
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
+.dot {
+    color: brown;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 21px;
+}
+.dot:hover{
+    text-decoration: underline;
+}
+
+@media (max-width:600px) {
+    th{
+        font-size: 27px;
+        padding: 10px;
+    }
+    td{
+        font-size: 21px;
+    }
+    .con{
+        padding: 3px;
+    }
+    table{
+        margin-bottom: 30px;
+        /* margin: auto; */
+    }
+    .back{
+        margin-left: 47%;
+    }
+    .na{
+        font-size: 23px;
+    }
+    h1{
+        width:500px;
+        padding:10px;
+    }
+}

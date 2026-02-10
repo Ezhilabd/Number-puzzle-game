@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normal game</title>
+    <link rel="stylesheet" href="{% static 'css/normal.css' %}" />
+</head>
+
+<body>
+    <div class="main">
+        <h2>Number Puzzle Game</h2>
+        
+        <!-- <p>Wallet Coins: {{ wallet_coins }}</p>
+        <p>Attempts: {{ attempts }}/10</p> -->
+        
+        <div class="ins">
+            <p>*  ->  Correct number in correct position</p>
+            <p>#  ->  Correct number in wrong position</p>
+            <p>_  ->  wrong choice</p>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <input placeholder="eg . 1234" type="text" name="guess" maxlength="4" required>
+            <button type="submit">Guess</button>
+        </form>
+        
+        <p>{{ feedback }}</p>
+        
+        <!-- {% if game_over %} -->
+        
+        <!-- {% endif %} -->
+        
+        <!-- <h3>Last 10 Attempts</h3> -->
+        <ul>
+            {% for h in histories %}
+            <li>{{ h.input }} → {{ h.output }}</li>
+            {% empty %}
+            <li>No attempts yet</li>
+            {% endfor %}
+        </ul>
+    <a href="{% url 'restart_game' %}">🔄 New Game</a>    
+    <a class="back" href="{% url 'main' %}">Back to Home</a>
+</div>
+</body>
+
+</html>

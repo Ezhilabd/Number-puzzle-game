@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+</head>
+
+<body>
+    <div class="con">
+        <h1>Welcome 🙏, {{ user.username }}!</h1>
+        {% for am in profile %}
+        {% if forloop.first %}
+        <p>Your wallet coins: {{ am.wallet_coins }}</p>
+        {% endif %}
+        {% endfor %}
+        <!-- <h3>Options:</h3> -->
+        <ul class="var">
+            <li><a href="{% url 'play_game' %}">Play</a></li>
+            <li><a href="{% url 'new_tournament' %}">New Tournament</a></li>
+            <li><a href="{% url 'leaderboard' %}">View Leaderboard</a></li>
+            <li><a href="{% url 'tournament_history' %}">Tournament History</a></li>
+
+        </ul>
+        <a class="back" href="{% url 'logout' %}">Logout</a>
+
+
+        <button class="m1" onclick="playmusic()">🎶</button>
+        <audio id="bg-music" loop>
+            <source src="{% static 'music/game_music.mpeg' %}" type="audio/mpeg">
+        </audio>
+        <script>
+            let a = document.getElementById("bg-music");
+            if (localStorage.playmusic ==="on")
+            a.play()
+            function playmusic() {
+                
+                a.paused ? (a.play(),
+                localStorage.playmusic="on")
+                 : (a.pause(),
+                 localStorage.playmusic="off");
+            }
+        </script>
+    </div>
+</body>
+
+</html>

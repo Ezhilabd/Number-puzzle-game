@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: rgb(255, 236, 126) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: brown;
+}
+
+.main {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 30px 35px;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 14px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.main h2 {
+    margin-bottom: 15px;
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+.main p {
+    margin: 8px 0;
+    font-size: 15px;
+}
+
+form {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+input[type="text"] {
+    width: 150px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
+button {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: green;
+    color: #fff;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 198, 255, 0.6);
+}
+
+a {
+    display: inline-block;
+    margin-top: 15px;
+    color: yellow;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px;
+    background-color: red;
+}
+
+a:hover {
+    /* text-decoration: underline; */
+}
+
+h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+ul {
+    list-style: none;
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+ul li {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 8px;
+    margin-bottom: 6px;
+    border-radius: 6px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* Scrollbar */
+ul::-webkit-scrollbar {
+    width: 5px;
+}
+
+ul::-webkit-scrollbar-thumb {
+    background: #00c6ff;
+    border-radius: 10px;
+}
+.ins{
+    border:3px solid white;
+    padding: 10px;
+    width: 80%;
+    margin: 10px;
+}
+
+.ins p{
+    color: blue;
+    font-size: 20px;
+    font-weight: 700;
+}

@@ -1,0 +1,105 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.con{
+    padding: 40px;
+    min-height:100vh;
+    background-color: rgb(255, 236, 126);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:10px;
+    margin-top: 10px;
+    
+}
+form>div{
+    display: flex;
+    flex-direction: column;
+}
+.main{
+    background-color: white;
+    min-height: 400px;
+    width: 400px;
+    border: 4px solid white;
+    border-radius: 20px;
+    padding: 20px;
+    margin: auto;
+    font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+input{
+    padding: 7px;
+    border:2px solid brown;
+    font-size: 18px;
+    border-radius: 10px;
+}
+input:hover{
+    border:2px solid yellow;
+}
+input:focus{
+    outline: none;
+    border: 2px solid yellow;
+}
+label{
+    font-weight: 600;
+    font-size: 22px;
+    padding: 10px;
+    color: black;
+}
+button{
+    padding: 7px;
+    font-size: 19px;
+    font-weight: 600;
+    background-color: green;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: white;
+    
+}
+h1{
+    text-align: center;
+    color:brown;
+    font-size: 35px;
+}
+.next{
+    color: brown;
+}
+.next a{
+    color: blue;
+}
+#error-message{
+    visibility: hidden;
+    color: red;
+}
+.password_error{
+    font-size: 12px;
+    display: none;
+}
+.error_box{
+    font-size: 14px;
+    margin:15px 0px;
+}
+
+@media (max-width:600px) {
+    .main{
+        width: 280px;
+    }
+    h1{
+        font-size: 25px;
+    }
+    .con{
+        padding: 20px;
+    }
+    .label{
+        font-size: 18px;
+    }
+    
+}
