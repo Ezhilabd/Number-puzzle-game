@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-yjv_(4w@b)hi1)vs=2el9x!clmso)hqovoglx1w5^7)3gic^9(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://number-puzzle-game-he2p.onrender.com']
 
 
 # Application definition
