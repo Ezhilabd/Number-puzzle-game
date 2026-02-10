@@ -1,1 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+</head>
+
+<body>  
+    <div class="con">
+    <section class="main">
+        <h1>Welcome! ✋</h1>
+        <h1>Login to our account</h1>
+        <form method="POST" action="{% url 'signin' %}">
+            {% csrf_token %}
+            <div>
+                <label for="">Username :</label>
+                <input name="username" type="text" placeholder="Enter name" />
+            </div>
+
+            <div>
+                <label for="">Password</label>
+                <input name="password" type="password" placeholder="Enter your password" />
+            </div>
+            <button type="submit">Submit</button>
+            {% if error %}
+                <div id="error-message">{{ error }}</div>
+            {% endif %}
+        </form>
+        <p class="next">Create have an account?<a href="{% url 'home' %}">Register</a></p>
+        <script>
+            // Show alert when page loads if there's an error
+            window.onload = function () {
+                const errorDiv = document.getElementById('error-message');
+                if (errorDiv) {
+                    alert(errorDiv.textContent);
+                }
+            };
+        </script>
+    </section>
+</div>
+</body>
+
+</html>
