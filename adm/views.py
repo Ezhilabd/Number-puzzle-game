@@ -63,9 +63,9 @@ def signin(request):
         else:
             
             
-            return render(request, 'sign_in.html',{"error" : "Invalid credientials"})
+            return render(request, 'index.html',{"error" : "Invalid credientials"})
     
-    return render(request, 'sign_in.html')
+    return render(request, 'index.html')
 
 @login_required
 def main(request):
